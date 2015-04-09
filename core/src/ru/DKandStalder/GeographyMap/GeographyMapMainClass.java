@@ -17,7 +17,8 @@ public class GeographyMapMainClass implements ApplicationListener {
 	public void create () {
 		this.mapScreen=new MapScreen();
 		this.interfaceScreen=new InterfaceScreen();
-
+		this.mapScreen.show();
+		this.interfaceScreen.show();
 	}
 
 	@Override
