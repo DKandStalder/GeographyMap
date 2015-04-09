@@ -1,0 +1,103 @@
+
+atlas.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+isChecked_alum
+  rotate: false
+  xy: 1, 409
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isChecked_auto
+  rotate: false
+  xy: 1, 307
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isChecked_him
+  rotate: false
+  xy: 303, 409
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isChecked_minud
+  rotate: false
+  xy: 1, 205
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isChecked_stal
+  rotate: false
+  xy: 303, 307
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isChecked_sud
+  rotate: false
+  xy: 605, 409
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isntChecked_alum
+  rotate: false
+  xy: 1, 103
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isntChecked_auto
+  rotate: false
+  xy: 303, 205
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isntChecked_him
+  rotate: false
+  xy: 605, 307
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isntChecked_minud
+  rotate: false
+  xy: 1, 1
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isntChecked_stal
+  rotate: false
+  xy: 303, 103
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+isntChecked_sud
+  rotate: false
+  xy: 605, 205
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+title
+  rotate: false
+  xy: 303, 1
+  size: 300, 100
+  orig: 300, 100
+  offset: 0, 0
+  index: -1
+nothing
+  rotate: false
+  xy: 907, 409
+  size: 50, 100
+  orig: 50, 100
+  offset: 0, 0
+  index: -1

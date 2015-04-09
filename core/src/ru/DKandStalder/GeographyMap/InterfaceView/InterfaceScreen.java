@@ -6,6 +6,14 @@ import com.badlogic.gdx.Screen;
  * Created by DK on 07.04.2015.
  */
 public class InterfaceScreen implements Screen {
+
+    MyLayer layer;
+
+    public InterfaceScreen(){
+        AssetLoader.load();
+        layer = new MyLayer();
+    }
+
     @Override
     public void show() {
 
@@ -13,7 +21,7 @@ public class InterfaceScreen implements Screen {
 
     @Override
     public void render(float delta) {
-
+        layer.draw();
     }
 
     @Override
