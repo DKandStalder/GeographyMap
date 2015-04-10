@@ -6,23 +6,25 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
+import ru.DKandStalder.GeographyMap.InterfaceView.InputListener;
 import ru.DKandStalder.GeographyMap.InterfaceView.InterfaceScreen;
 import ru.DKandStalder.GeographyMap.MapView.MapScreen;
 
 public class GeographyMapMainClass implements ApplicationListener,GestureDetector.GestureListener,InputProcessor {
 	private MapScreen mapScreen;
 	private InterfaceScreen interfaceScreen;
+	public static InputMultiplexer inputMultiplexer;
 	
 	@Override
 	public void create () {
+		inputMultiplexer=new InputMultiplexer();
+		inputMultiplexer.addProcessor(new GestureDetector(this));
+		inputMultiplexer.addProcessor(this);
+		Gdx.input.setInputProcessor(inputMultiplexer);
 		this.mapScreen=new MapScreen();
 		this.interfaceScreen=new InterfaceScreen();
 		this.mapScreen.show();
 		this.interfaceScreen.show();
-		InputMultiplexer inputMultiplexer=new InputMultiplexer();
-		inputMultiplexer.addProcessor(new GestureDetector(this));
-		inputMultiplexer.addProcessor(this);
-		Gdx.input.setInputProcessor(inputMultiplexer);
 	}
 
 	@Override

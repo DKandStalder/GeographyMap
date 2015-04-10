@@ -15,13 +15,35 @@ public class MapLayer extends Actor {
     private TextureRegion textureRegion;
     public MapLayer(int index){
         this.textureRegion=new TextureRegion(new Texture("images/"+index+".png"));
+        switch (index){
+            case 0:
+                this.setColor(new Color(0,0,0,1));
+                break;
+            case 1:
+                this.setColor(new Color(0,0,1,1));
+                break;
+            case 2:
+                this.setColor(new Color(0,1,0,1));
+                break;
+            case 3:
+                this.setColor(new Color(0,1,1,1));
+                break;
+            case 4:
+                this.setColor(new Color(1,0,0,1));
+                break;
+            case 5:
+                this.setColor(new Color(1,0,1,1));
+                break;
+            case 6:
+                this.setColor(new Color(0.5f,0.5f,0.5f,1));
+                break;
+        }
     }
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
         Color parentColor=batch.getColor();
-        this.setColor(new Color(MathUtils.random(0,1),MathUtils.random(0, 1), MathUtils.random(0, 1), MathUtils.random(0,1)));
         batch.setColor(this.getColor());
         batch.draw(textureRegion, this.getX(),this.getY());
         batch.setColor(parentColor);

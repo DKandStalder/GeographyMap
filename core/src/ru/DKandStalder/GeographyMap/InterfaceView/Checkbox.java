@@ -3,6 +3,7 @@ package ru.DKandStalder.GeographyMap.InterfaceView;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import ru.DKandStalder.GeographyMap.GeographyMapMainClass;
 
 /**
  * Created by Злобный ADMIN on 09.04.2015.
@@ -25,7 +26,7 @@ public class Checkbox extends Actor{
         minudY = sudY - height - 2;
         himY = minudY - height - 2;
         layerHeight = upY;
-        Gdx.input.setInputProcessor(new InputListener(x, stalY, alumY, autoY, sudY, minudY, himY, width, height));
+        GeographyMapMainClass.inputMultiplexer.addProcessor(new InputListener(x, stalY, alumY, autoY, sudY, minudY, himY, width, height));
     }
 
     public static boolean isStalPressed() {

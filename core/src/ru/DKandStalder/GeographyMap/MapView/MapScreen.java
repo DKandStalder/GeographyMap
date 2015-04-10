@@ -4,7 +4,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import ru.DKandStalder.GeographyMap.InterfaceView.Checkbox;
 
 /**
  * Created by DK on 07.04.2015.
@@ -18,12 +20,13 @@ public class MapScreen implements Screen {
     public MapScreen(){
         this.mapStage=new Stage();
         this.camera=new OrthographicCamera(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        this.camera.position.set(Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()/2,0);
     }
     @Override
     public void show() {
         this.mapStage=new Stage();
         this.mapStage.getViewport().setCamera(camera);
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 7; i++) {
             this.mapStage.addActor(new MapLayer(i));
         }
     }
@@ -32,6 +35,29 @@ public class MapScreen implements Screen {
     public void render(float delta) {
         this.mapStage.draw();
         this.camera.zoom=this.zoom;
+        for (int i = 1; i < this.mapStage.getActors().size; i++) {
+            switch (i){
+                case 1:
+                    this.mapStage.getActors().get(i).setVisible(Checkbox.isAlumPressed());
+                    break;
+                case 2:
+                    this.mapStage.getActors().get(i).setVisible(Checkbox.isStalPressed());
+                    break;
+                case 3:
+                    this.mapStage.getActors().get(i).setVisible(Checkbox.isAutoPressed());
+                    break;
+                case 4:
+                    this.mapStage.getActors().get(i).setVisible(Checkbox.isSudaPressed());
+                    break;
+                case 5:
+                    this.mapStage.getActors().get(i).setVisible(Checkbox.isHimPressed());
+                    break;
+                case 6:
+                    this.mapStage.getActors().get(i).setVisible(Checkbox.isMinudPressed());
+                    break;
+
+            }
+        }
     }
 
     @Override
