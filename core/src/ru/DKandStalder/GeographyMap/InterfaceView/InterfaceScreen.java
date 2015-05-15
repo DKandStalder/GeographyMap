@@ -1,5 +1,6 @@
 package ru.DKandStalder.GeographyMap.InterfaceView;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 
 /**
@@ -26,6 +27,7 @@ public class InterfaceScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
+        layer = new MyLayer();
 
     }
 

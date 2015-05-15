@@ -1,9 +1,13 @@
 package ru.DKandStalder.GeographyMap.InterfaceView;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.utils.Array;
 import ru.DKandStalder.GeographyMap.GeographyMapMainClass;
+
+import java.util.Iterator;
 
 /**
  * Created by Злобный ADMIN on 09.04.2015.
@@ -26,6 +30,13 @@ public class Checkbox extends Actor{
         minudY = sudY - height - 2;
         himY = minudY - height - 2;
         layerHeight = upY;
+        Array<InputProcessor> inputProcessorArray=GeographyMapMainClass.inputMultiplexer.getProcessors();
+        for (int i = 0; i < inputProcessorArray.size; i++) {
+            if(inputProcessorArray.get(i) instanceof InputListener){
+                inputProcessorArray.removeIndex(i);
+                i--;
+            }
+        }
         GeographyMapMainClass.inputMultiplexer.addProcessor(new InputListener(x, stalY, alumY, autoY, sudY, minudY, himY, width, height));
     }
 

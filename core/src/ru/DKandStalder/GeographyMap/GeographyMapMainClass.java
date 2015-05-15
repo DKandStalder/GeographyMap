@@ -29,7 +29,7 @@ public class GeographyMapMainClass implements ApplicationListener,GestureDetecto
 
 	@Override
 	public void resize(int width, int height) {
-
+		this.interfaceScreen.resize(width, height);
 	}
 
 	@Override
