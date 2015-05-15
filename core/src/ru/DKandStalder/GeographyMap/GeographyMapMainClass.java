@@ -1,19 +1,19 @@
 package ru.DKandStalder.GeographyMap;
 
-import com.badlogic.gdx.*;
+import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputMultiplexer;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
-import ru.DKandStalder.GeographyMap.InterfaceView.InputListener;
 import ru.DKandStalder.GeographyMap.InterfaceView.InterfaceScreen;
 import ru.DKandStalder.GeographyMap.MapView.MapScreen;
 
 public class GeographyMapMainClass implements ApplicationListener,GestureDetector.GestureListener,InputProcessor {
+	public static InputMultiplexer inputMultiplexer;
 	private MapScreen mapScreen;
 	private InterfaceScreen interfaceScreen;
-	public static InputMultiplexer inputMultiplexer;
 	
 	@Override
 	public void create () {
@@ -135,6 +135,8 @@ public class GeographyMapMainClass implements ApplicationListener,GestureDetecto
 
 	@Override
 	public boolean scrolled(int amount) {
+		mapScreen.setInitialScale(mapScreen.getCameraZoom());
+		mapScreen.zoom(mapScreen.getCameraZoom(), (float) (mapScreen.getCameraZoom() * Math.pow(1.1f, -amount)));
 		return false;
 	}
 }
